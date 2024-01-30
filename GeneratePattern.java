@@ -2,7 +2,7 @@
     GeneratePattern.java
 
 	Description:    This program can be used to draw geometric patterns
-                    through the use of for loop structures.
+                    through the use of for-loop structures.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -11,8 +11,8 @@
 //  Goals:  Learn standard patterns of single, double, or triple Looping
 //          Complexity analysis of loop structures can be considered if needed.
 //
-//  STUDENT NAME:
-//  DATE:
+//  STUDENT NAME: Giovanni Martinez
+//  DATE: 01/24/24
 
 ///////////////////////////////////////////////////////////////////////////////
 import java.io.*;
