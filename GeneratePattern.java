@@ -55,26 +55,10 @@ public class GeneratePattern
 				System.out.format("%-3d", board[row][col]);
 			System.out.println();
 		}
-/*
-		for (int[] row : board)
-			System.out.println(Arrays.toString(row));
-*/
-/*
-		for (int row = 0; row < board.length; row++){
-			for (int col = 0; col < board[row].length; col++)
-				System.out.format(board[row][col] + " ");
-			System.out.println();
-		}
-*/
-	} // end of printBoard()
-
-    /** Method which makes drawing calls.  Your code goes in here.  Do
-    not add any variables!
-    */
+		
     public void populateBoard(int patternNumber)
     {
 		int num = 1; 
-        // draw your pattern
         // assume maximum number of dots in each row or col is 8
         switch (patternNumber) {
 		case 1:
@@ -85,41 +69,41 @@ public class GeneratePattern
 						board[row][col] = num++;
 				break;
 			
-		case 2:  //beginnnig of my code //complete
+		case 2:  
 				for(int col=0;col< MAXCOL; col++)
 					for (int row =0; row < MAXROW; row++)
 						board[row][col]=num++;
 				break;
-		case 3: //complete
-			    for (int row = 1; row < MAXROW; row++)
+		case 3: 
+			    	for (int row = 1; row < MAXROW; row++)
 					for (int col = 0; col < row; col++)
 						board[row][col] = num++;
 				break;
-		case 4: //complete
+		case 4:
 				for (int row = 0; row < MAXROW; row++)
 					for (int col = row; col < MAXCOL; col++)
 						board[row][col] = num++;
 				break;
-		case 5: //complete
+		case 5: 
 				for (int row = 1; row < MAXROW-1; row++)
 					for (int col = 1; col < MAXROW - row; col++)
 						board[row][col] = num++;
 				break; 
-		case 6: //complete 
+		case 6: 
 				for (int row = 1; row < MAXROW; row++)
 					for (int col = MAXCOL-1; col > MAXROW-row-1; col--)
 						board[row][col] = num++;
 
 				break;
-		case 7: //complete //diagnol 1-8
-			for (int row = 0; row < MAXROW; row++)
-				for (int col = row; col <= row; col++)
-					board[row][col] = num++;
+		case 7: 
+				for (int row = 0; row < MAXROW; row++)
+					for (int col = row; col <= row; col++)
+						board[row][col] = num++;
 			// alternate solution
 			/*for(int row = 0; row < MAXROW; row++)
 					board[row][row]= num++ */
 		    break;
-		case 8: //complete  // u will need 2 seperate for loops same for 10
+		case 8: 
 				for (int row = 0; row < MAXROW; row++){
 					board[row][row] = num++; 
 				}
@@ -127,7 +111,7 @@ public class GeneratePattern
 					board[row][MAXROW-1-row] = num++;
 				break;
 
-		case 9: //complete
+		case 9: 
 
 			for (int col = 0; col < 4; col++){
 				for (int row = col; row < 4*2-col;row++){
@@ -136,7 +120,7 @@ public class GeneratePattern
 			}
 		break;
 		
-		case 10: //complete  //4*2 - ROW or 4*2 - col
+		case 10: 
 			for (int col = 0; col < 4; col++){
 				for(int row = col; row < 4*2-col;row++){
 					board[row][col] = num++;
@@ -150,7 +134,7 @@ public class GeneratePattern
 			}
 			break;
 
-		case 11: //complete 
+		case 11: 
 			for (int row = 0; row < 1; row++) {
 				for(int col = 0; col < MAXCOL; col++)
 					board[row][col]=num++;
@@ -176,7 +160,7 @@ public class GeneratePattern
 			
 		break;
 
-		case 12:  // complete
+		case 12:  
 			for (int i = 0; i < (MAXROW + 1) / 2; i++){ 
 				for (int col = i; col < MAXCOL - i; col++){
 					board[i][col] = num++;
@@ -191,22 +175,9 @@ public class GeneratePattern
 				board[row][i] = num++;
 			}
 			}
-		break;
-
-
-			/* 
-				for ( int row = i; row < MAXCOL - i; row++)
-			        	board[i][row] = num++;
-			for (int row = i+1; row < MAXROW - i; row++)
-				board[row][MAXCOL - i -1] = num++;
-			for (int col = MAXCOL-i-2; col >= 0; col--)
-				board[MAXCOL - i -1][col] = num ++;
-			for (int row = MAXROW - i - 2; row >= i + 1; row--)
-				board[row][i] = num++; */
+		break;		
 		
-			
-		
-		case 13: //complete //3 nested for loops
+		case 13: 
 			for (int row = 0; row < MAXROW-7; row++) //first for loop
 				for (int col = 0; col < MAXCOL - 6; col++)
 			        board[row][col] = num++;
@@ -223,28 +194,8 @@ public class GeneratePattern
 						board[row][col] = num++;
 				}
 			} 
-		/* 				//practice draft
-			for(int row = 1; row < 2; row++){   //prac drafts - iteration 0 (1,2)
-				for (int col = 0; col < 3; col++){ // or MAXCOL - 5         (0,3)
-					board[row][col] = num++;
-				}
-			}
-			for (int row = 1 + 1; row < 3; row++){    //iteration 1         (2,3)
-				for (int col = 0 + 1; col < 4; col++){ // or MAXCOL - 4     (1,4)
-					board[row][col] = num ++;
-			}
-		} 
-			for(int row = 1 + 2; row < 4;row++){  //iteration 2    			(3,4)
-				for(int col = 0 + 2; col < 5; col++){ // or MAXCOL - 3		(2,5)
-					board[row][col] = num++;
-				}
-			}
-			for(int row = 1 + 3; row < 5;row++){  //iteration 3
-				for(int col = 0 + 2; col < 6; col++){ // or MAXCOL - 2
-					board[row][col] = num++;
-				}
-			} */
-		 		
+
+			
 		break;
 
 		case 14: //complete
@@ -264,15 +215,15 @@ public class GeneratePattern
 					//last for loop
 			for(int row = MAXROW-1; row < MAXCOL;row++){
 				for (int col = MAXCOL-2; col < MAXCOL;col++){
-						board[row][col] = num++;
+					board[row][col] = num++;
 				}
 			}
 			num = 21;
 			for(int row = MAXROW-1; row >= 0; row--)
-					board[row][row] = num++;
+				board[row][row] = num++;
 		break;
 
-		case 15: //complete 
+		case 15: 
 
 			for(int row = 0; row < MAXROW; row++){
 				board[row][row]= num++;
@@ -280,23 +231,9 @@ public class GeneratePattern
 			for (int row = 0; row < MAXROW-1; row++)
 				board[row][row+1] = num++;
 			break;
-		/* 	for (int row = 0; row < MAXROW-2; row++)
-				board[row][row+2] = num++; */
-
-			/*  for(int i = 1; i < MAXCOL - 6; i++)
-				for(int row = 0; row <= MAXROW - i; row++)
-					for(int col = row + 1; col < MAXCOL ; col++)
-						board[row][col] = num++; */
-			/*case 16:
-			for(int j = 0; j < MAXROW; j++)
-				for (int row = j; row < MAXROW; row++)
-					for (int col= row; col <= row; col++)
-						board[row][col] = num++; 
-			break; */
-		case 16: //complete
-			/*for (int row = 0; row < MAXROW; row++)
-					for (int col= row; col <= row; col++)
-						board[row][col] = num++; */
+		
+		case 16: 
+			
 			for(int row = 0; row < MAXROW; row++){
 					board[row][row]= num++;
 				}		
@@ -305,20 +242,6 @@ public class GeneratePattern
 						board[row][row+i] = num++;
 			}
 			break;
-		
-			
-			
-			//==========================================================
-			// START OF YOUR CODE for the remaining patterns below... 
-			//==========================================================
-			// ADD YOUR CODE FOR THE REMAINING CASES (i.e., PATTERNS)...
-
-
-
-
-			//==========================================================
-			// END OF YOUR CODE... 
-			//==========================================================
 
             default:
                 System.out.println("This one hasn't been done yet.");
@@ -327,7 +250,7 @@ public class GeneratePattern
     } // end of populateBoard()
 
 
-    /**  Metho to read in from user which pattern to do next.  If the
+    /**  Method to read in from the user which pattern to do next.  If the
      *  user enters an integer between 1 and MAXPATTERN this value is
      *  returned; if the user enters q it returns -1; if the user
      *  enters something else it returns the current pattern;
